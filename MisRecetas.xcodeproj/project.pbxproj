@@ -12,6 +12,8 @@
 		B61502501EA9EFD900E4EBA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B615024E1EA9EFD900E4EBA1 /* Main.storyboard */; };
 		B61502521EA9EFD900E4EBA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61502511EA9EFD900E4EBA1 /* Assets.xcassets */; };
 		B61502551EA9EFD900E4EBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61502531EA9EFD900E4EBA1 /* LaunchScreen.storyboard */; };
+		B615025D1EA9EFEA00E4EBA1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615025C1EA9EFEA00E4EBA1 /* Recipe.swift */; };
+		B615025F1EA9F15000E4EBA1 /* TableViewControllerInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615025E1EA9F15000E4EBA1 /* TableViewControllerInicial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B61502511EA9EFD900E4EBA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B61502541EA9EFD900E4EBA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B61502561EA9EFD900E4EBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B615025C1EA9EFEA00E4EBA1 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		B615025E1EA9F15000E4EBA1 /* TableViewControllerInicial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerInicial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 				B615024A1EA9EFD900E4EBA1 /* AppDelegate.swift */,
 				B615024C1EA9EFD900E4EBA1 /* ViewController.swift */,
 				B615024E1EA9EFD900E4EBA1 /* Main.storyboard */,
+				B615025E1EA9F15000E4EBA1 /* TableViewControllerInicial.swift */,
 				B61502511EA9EFD900E4EBA1 /* Assets.xcassets */,
 				B61502531EA9EFD900E4EBA1 /* LaunchScreen.storyboard */,
 				B61502561EA9EFD900E4EBA1 /* Info.plist */,
+				B615025C1EA9EFEA00E4EBA1 /* Recipe.swift */,
 			);
 			path = MisRecetas;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B615025D1EA9EFEA00E4EBA1 /* Recipe.swift in Sources */,
 				B615024D1EA9EFD900E4EBA1 /* ViewController.swift in Sources */,
+				B615025F1EA9F15000E4EBA1 /* TableViewControllerInicial.swift in Sources */,
 				B615024B1EA9EFD900E4EBA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
