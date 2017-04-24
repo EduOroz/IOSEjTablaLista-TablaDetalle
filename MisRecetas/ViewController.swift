@@ -32,40 +32,72 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Hay que crear 2 funciones para indicar el número de celdas de la tabla
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if (section==0) {
+            return 2
+        } else if (section==1) {
+            return (recipe?.ingredients.count)!
+        } else if (section==2) {
+            return (recipe?.steps.count)!+1
+        } else {
+            return 2
+        }
     }
     
-    /*Si queremos crear varias secciones
+    /*Si queremos crear varias secciones*/
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
-    }*/
+        return 3    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section==1) {
+            return "Ingredientes"
+        } else if (section==2) {
+            return "Pasos"
+        } else if (section==3) {
+            return "Rating"
+        } else {
+            return ""
+        }
+        
+    }
     
     //Y para indicar el contenido de las celdas
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let celda = UITableViewCell()
+        //let celda = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellRecipeDetails", for: indexPath) //as! RecipeDetailViewCell
         
-        /*if (celda.reuseIdentifier=="CellName"){
-            celda.textLabel?.text = recipe?.name}
-        else if (celda.reuseIdentifier=="CellIngredients"){
-            celda.textLabel?.text = recipe?.ingredients.description}
-        else if (celda.reuseIdentifier=="CellPasos"){
-            celda.textLabel?.text = recipe?.steps.description}
-        else if (celda.reuseIdentifier=="CellRating"){
-            celda.textLabel?.text = recipe?.rating}
-        else if (celda.reuseIdentifier=="CellTiempo"){
-            celda.textLabel?.text = recipe?.time}*/
-        if (indexPath.row==0){
-            celda.textLabel?.text = recipe?.name}
-        else if (indexPath.row==1){
-            celda.textLabel?.text = recipe?.ingredients.description}
-        else if (indexPath.row==2){
-            celda.textLabel?.text = recipe?.steps.description}
-        else if (indexPath.row==3){
-            celda.textLabel?.text = recipe?.rating}
-        else if (indexPath.row==4){
-            celda.textLabel?.text = recipe?.time}
-        return celda
+        
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "Nombre: \(recipe!.name)"
+            case 1:
+                cell.textLabel?.text = "Tiempo: \(recipe!.time)"
+            default:
+                print ("case 0 onDefault")
+            }
+        case 1:
+            
+            switch indexPath.row {
+            /*case 0:
+                cell.textLabel?.text = "Ingredientes: \(recipe!.ingredients [indexPath.row])"*/
+            default:
+                cell.textLabel?.text = "\t" + (recipe?.ingredients [indexPath.row])!
+            }
+        case 2:
+            switch indexPath.row {
+            case ((recipe?.steps.count)!):
+                cell.textLabel?.text = "Rating: \(recipe!.rating)"
+            default:
+                cell.textLabel?.text = "\t \(recipe!.steps [indexPath.row])"
+
+            }
+        default:
+            print ("onDefault")
+        }
+        
+        return cell
     }
 
 }
